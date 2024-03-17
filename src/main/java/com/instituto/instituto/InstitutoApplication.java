@@ -10,5 +10,5 @@ public class InstitutoApplication {
 		PropertyConfigurator.configure("log4j.properties");
 		SpringApplication.run(InstitutoApplication.class, args);
 	}
-	
+
 }

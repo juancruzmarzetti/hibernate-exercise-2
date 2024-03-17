@@ -2,10 +2,18 @@ package com.instituto.instituto.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Set;
 @Entity
 @Table(name = "materias")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,24 +26,4 @@ public class Materia {
     @OneToMany(mappedBy = "materia")
     @JsonIgnore
     private Set<Cursada> cursadas;
-
-    public Set<Cursada> getCursadas() {
-        return cursadas;
-    }
-
-    public void setCursadas(Set<Cursada> cursadas) {
-        this.cursadas = cursadas;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 }
